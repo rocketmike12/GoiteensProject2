@@ -1,0 +1,84 @@
+version: '3.7'
+services:
+  db:
+    image: postgres:14.5
+    env_file: .env
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+    ports:
+      - "5534:5534"
+    expose:
+      - 5534
+
+  redis:
+    image: redis:alpine
+    restart: on-failure
+    expose:
+      - 6979
+    healthcheck:
+      test: [ "CMD", "redis-cli", "-h", "localhost", "ping" ]
+      interval: 1m
+      timeout: 5s
+      retries: 2
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/python/Dockerfile
+    env_file: .env
+    stdin_open: true
+    tty: true
+    expose:
+      - 8080
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend:/backend
+    depends_on:
+      - db
+      - redis
+      - celery
+      - flower
+      - nginx
+    working_dir: /backend
+    command: python server/runserver.py
+
+  celery:
+    image: fix_a_time_backend
+    restart: on-failure
+    env_file: .env
+    healthcheck:
+      test: [ "CMD-SHELL", "ps ax", "|" ,"grep -v grep", "|" ,"grep celery",  "||", "exit 1" ]
+      interval: 1m
+      timeout: 5s
+      retries: 2
+    volumes:
+      - ./backend:/backend
+    depends_on:
+      - db
+      - redis
+    command: celery --app celery_conf:app worker -l info -B
+
+  flower:
+    image: fix_a_time_backend
+    restart: on-failure
+    env_file: .env
+    ports:
+      - "5555:5555"
+    volumes:
+      - ./backend:/backend
+    depends_on:
+      - db
+      - redis
+    command: celery --app celery_conf:app flower
+
+  nginx:
+    restart: always
+    image: library/nginx:1.9.0
+    expose:
+      - 8081
+    volumes:
+      - ./docker/nginx:/etc/nginx/conf.d
+      - ./docker/logs/nginx:/var/log/nginx
+      - ./backend:/backend
+
