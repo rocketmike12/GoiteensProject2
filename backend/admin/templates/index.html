@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+    {% for product in products %}
+      <div class="row featurette">
+      <div class="col-md-7 {% if product.id|divisibleby:"2" %} order-md-2 {% endif %}">
+        <a href="{{ product.path }}"><h2 class="featurette-heading">{{ product.title }}</h2></a>
+        <p class="lead">{{ product.description }}</p>
+      </div>
+      <div class="col-md-5">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{{ product.image_path }}" width="500" height="500">
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+    {% endfor %}
+
+<nav aria-label="...">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="?page={{ page_number|add:-1 }}">Previous</a>
+    </li>
+      {% for i in pages_count|get_range %}
+    <li class="page-item {% if i == page_number %} active {% endif %}"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% endfor %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ page_number|add:1 }}">Next</a>
+    </li>
+</ul>
+</nav>
+
+    <!-- /END THE FEATURETTES -->
+{% endblock %}

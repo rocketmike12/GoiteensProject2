@@ -37,40 +37,40 @@ services:
     depends_on:
       - db
       - redis
-      - celery
-      - flower
+#      - celery
+#      - flower
       - nginx
     working_dir: /backend
     command: python server/runserver.py
 
-  celery:
-    image: fix_a_time_backend
-    restart: on-failure
-    env_file: .env
-    healthcheck:
-      test: [ "CMD-SHELL", "ps ax", "|" ,"grep -v grep", "|" ,"grep celery",  "||", "exit 1" ]
-      interval: 1m
-      timeout: 5s
-      retries: 2
-    volumes:
-      - ./backend:/backend
-    depends_on:
-      - db
-      - redis
-    command: celery --app celery_conf:app worker -l info -B
-
-  flower:
-    image: fix_a_time_backend
-    restart: on-failure
-    env_file: .env
-    ports:
-      - "5555:5555"
-    volumes:
-      - ./backend:/backend
-    depends_on:
-      - db
-      - redis
-    command: celery --app celery_conf:app flower
+#  celery:
+#    image: fix_a_time_backend
+#    restart: on-failure
+#    env_file: .env
+#    healthcheck:
+#      test: [ "CMD-SHELL", "ps ax", "|" ,"grep -v grep", "|" ,"grep celery",  "||", "exit 1" ]
+#      interval: 1m
+#      timeout: 5s
+#      retries: 2
+#    volumes:
+#      - ./backend:/backend
+#    depends_on:
+#      - db
+#      - redis
+#    command: celery --app celery_conf:app worker -l info -B
+#
+#  flower:
+#    image: fix_a_time_backend
+#    restart: on-failure
+#    env_file: .env
+#    ports:
+#      - "5555:5555"
+#    volumes:
+#      - ./backend:/backend
+#    depends_on:
+#      - db
+#      - redis
+#    command: celery --app celery_conf:app flower
 
   nginx:
     restart: always
