@@ -4,7 +4,9 @@ from django.contrib.auth import get_user_model
 
 from django.contrib.auth import authenticate, login
 
-from services.user_module.forms import RegistrationForm
+from services.user_module.forms import RegistrationForm, AuthForm
+
+from settings import SITE_URL
 
 User = get_user_model()
 
@@ -30,3 +32,18 @@ def registration(request):
         form = RegistrationForm()
 
     return render(request, 'registration.html', context={'form': form})
+
+
+def auth(request):
+    if request.method == "POST":
+        form = AuthForm(request.POST)
+        user = authenticate(username=form.data['username'],
+                            password=form.data['password'])
+        if user is not None:
+            return redirect('index')
+        else:
+            pass
+    else:
+        form = AuthForm()
+
+    return render(request, 'auth.html', context={'form': form, 'SITE_URL': SITE_URL})

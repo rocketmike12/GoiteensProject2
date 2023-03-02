@@ -23,6 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent  # backend
 LOGS_DIR = BASE_DIR / 'logs'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_ROOT = BASE_DIR / 'media'
+SITE_URL = 'http://localhost:8080'
 
 
 # Quick-start development settings - unsuitable for production
