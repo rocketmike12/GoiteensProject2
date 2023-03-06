@@ -10,6 +10,15 @@ class RegistrationForm(forms.ModelForm):
         fields = ('first_name', 'last_name', 'email', 'username', 'password')
 
 
+class ProfileForm(forms.Form):
+    password_old = forms.CharField(required=False)
+    password_new = forms.CharField(required=False)
+
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email', 'username', 'password')
+
+
 class AuthForm(forms.Form):
     class Meta:
         fields = ('username', 'password')

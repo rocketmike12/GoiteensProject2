@@ -38,7 +38,6 @@ DEBUG = bool(int(os.environ.get('DEBUG', 1)))
 ALLOWED_HOSTS = ['localhost:3000', '0.0.0.0:8000', '0.0.0.0', 'localhost:8080', 'localhost', '127.0.0.1', '127.0.0.1:8080']
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -169,3 +168,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# SMTP
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# Host for sending e-mail.
+EMAIL_HOST = 'smtp.gmail.com'
+
+# Port for sending e-mail.
+EMAIL_PORT = 587
+
+EMAIL_HOST_USER = 'mishakoroptest@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = True
