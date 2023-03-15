@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 
+from django.http import HttpResponseNotFound
+
 from django.contrib.auth import get_user_model
 
 from django.contrib.auth import authenticate, login
@@ -58,6 +60,9 @@ def auth(request):
 def profile(request):
     if not request.user.is_authenticated:
         return redirect('auth')
+
+    if not request.user.is_seller:
+        return HttpResponseNotFound
 
     if request.method == 'POST':
         form = ProfileForm(request.POST)

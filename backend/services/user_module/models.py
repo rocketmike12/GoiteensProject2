@@ -14,13 +14,6 @@ class User(AbstractUser):
         UserSettings.objects.get_or_create(user=self)
 
 
-class UserAddress(models.Model):
-    country = models.CharField(max_length=255, verbose_name='Country')
-    city = models.CharField(max_length=255, verbose_name='City')
-    address = models.CharField(max_length=255, verbose_name='Address')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='User', related_name='user_address')
-
-
 class UserSettings(models.Model):
     is_send_push = models.BooleanField(default=True, verbose_name='Send Push')
     is_premium = models.BooleanField(default=False, verbose_name='Premium')
