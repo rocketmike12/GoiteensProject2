@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container marketing">
+    <a class="btn btn-outline-success justify-content-end" href="{% url 'create_product' %}" role="button">Create</a>
+    <hr class="featurette-divider">
+    {% for product in products %}
+      <a class="link_product" href="{% url 'product' question.id %}">
+      <div class="row featurette">
+      <div class="col-md-7 {% if product.id|divisibleby:"2" %} order-md-2 {% endif %}">
+        <h2 class="featurette-heading">{{ product.title }}</h2>
+        <p class="lead">{{ product.description }}</p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+      </div>
+      </a>
+    </div>
+
+    <hr class="featurette-divider">
+    {% endfor %}
+
+<nav aria-label="...">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="?page={{ page_number|add:-1 }}">Previous</a>
+    </li>
+      {% for i in pages_count|get_range %}
+    <li class="page-item {% if i == page_number %} active {% endif %}"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% endfor %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ page_number|add:1 }}">Next</a>
+    </li>
+</ul>
+</nav>
+
+    <!-- /END THE FEATURETTES -->
+{% endblock %}
