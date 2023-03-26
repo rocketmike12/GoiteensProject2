@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebe246bf-14cd-4f81-a2ff-ae28c3963e09" name="Changes" comment="Added basic calculator">
-      <change afterPath="$PROJECT_DIR$/backend/admin/templates/history.html" afterDir="false" />
+    <list default="true" id="ebe246bf-14cd-4f81-a2ff-ae28c3963e09" name="Changes" comment="Upgraded basic calculator, added history (not working yet)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/admin/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/admin/templates/basic_calculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/basic_calculator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/admin/templates/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/history.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/admin/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/registration.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/products_module/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/products_module/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/products_module/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/products_module/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/products_module/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/products_module/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,20 +36,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Projects/Python/PycharmProjects/django_architecture_application",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/Python/PycharmProjects/GoiteensProject2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\Python\PycharmProjects\GoiteensProject2\backend\services\products_module" />
@@ -149,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678904532715</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Upgraded basic calculator, added history (not working yet)">
+      <created>1679246052224</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679246052224</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +177,7 @@
     <MESSAGE value="Added authentication" />
     <MESSAGE value="Added profile" />
     <MESSAGE value="Added basic calculator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added basic calculator" />
+    <MESSAGE value="Upgraded basic calculator, added history (not working yet)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upgraded basic calculator, added history (not working yet)" />
   </component>
 </project>
