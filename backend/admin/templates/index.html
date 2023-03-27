@@ -13,7 +13,7 @@
     {% for product in products %}
       <div class="row featurette">
       <div class="col-md-7 {% if product.id|divisibleby:"2" %} order-md-2 {% endif %}">
-        <a href="{{ product.path }}"><h2 class="featurette-heading">{{ product.title }}</h2></a>
+        <a href="{{ product.path }}" class="text-decoration-none"><h2 class="featurette-heading text-dark">{{ product.title }}</h2></a>
         <p class="lead">{{ product.description }}</p>
       </div>
       <div class="col-md-5">

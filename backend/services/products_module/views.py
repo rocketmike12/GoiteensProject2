@@ -46,17 +46,21 @@ def basic_calculator(request):
         num2 = request.POST['num2']
         if 'add' in request.POST:
             result = int(num1) + int(num2)
+            UserHistoryUnit.objects.create(user=request.user, input=f"{num1} + {num2}", result=result)
             return render(request, 'basic_calculator.html', {'result': result})
 
         if 'sub' in request.POST:
             result = int(num1) - int(num2)
+            UserHistoryUnit.objects.create(user=request.user, input=f"{num1} - {num2}", result=result)
             return render(request, 'basic_calculator.html', {'result': result})
 
         if 'div' in request.POST:
             result = int(num1) / int(num2)
+            UserHistoryUnit.objects.create(user=request.user, input=f"{num1} / {num2}", result=result)
             return render(request, 'basic_calculator.html', {'result': result})
 
         if 'mul' in request.POST:
             result = int(num1) * int(num2)
+            UserHistoryUnit.objects.create(user=request.user, input=f"{num1} * {num2}", result=result)
             return render(request, 'basic_calculator.html', {'result': result})
     return render(request, 'basic_calculator.html')
