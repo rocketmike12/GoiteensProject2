@@ -30,7 +30,7 @@ def index(request):
 
 @login_required
 def get_my_history(request):
-    history = UserHistoryUnit.objects.filter(user=request.user)
+    history = UserHistoryUnit.objects.filter(user=request.user).order_by('-id')
     paginator = Paginator(history, 10)
 
     page_number = request.GET.get('page')
@@ -45,22 +45,44 @@ def basic_calculator(request):
         num1 = request.POST['num1']
         num2 = request.POST['num2']
         if 'add' in request.POST:
-            result = int(num1) + int(num2)
+            result = float(num1) + float(num2)
             UserHistoryUnit.objects.create(user=request.user, input=f"{num1} + {num2}", result=result)
             return render(request, 'basic_calculator.html', {'result': result})
 
         if 'sub' in request.POST:
-            result = int(num1) - int(num2)
+            result = float(num1) - float(num2)
             UserHistoryUnit.objects.create(user=request.user, input=f"{num1} - {num2}", result=result)
             return render(request, 'basic_calculator.html', {'result': result})
 
         if 'div' in request.POST:
-            result = int(num1) / int(num2)
+            result = float(num1) / float(num2)
             UserHistoryUnit.objects.create(user=request.user, input=f"{num1} / {num2}", result=result)
             return render(request, 'basic_calculator.html', {'result': result})
 
         if 'mul' in request.POST:
-            result = int(num1) * int(num2)
+            result = float(num1) * float(num2)
             UserHistoryUnit.objects.create(user=request.user, input=f"{num1} * {num2}", result=result)
             return render(request, 'basic_calculator.html', {'result': result})
     return render(request, 'basic_calculator.html')
+
+
+def circle_area(request):
+    if request.method == 'POST':
+        radius = request.POST['radius']
+        if 'calculate' in request.POST:
+            result = (3.141 * float(radius)) ** 2
+            UserHistoryUnit.objects.create(user=request.user, input=f"Area of circle with radius {radius}", result=result)
+            return render(request, 'circle_area.html', {'result': result})
+
+    return render(request, 'circle_area.html')
+
+
+def square_area(request):
+    if request.method == 'POST':
+        side_length = request.POST['side_length']
+        if 'calculate' in request.POST:
+            result = float(side_length) ** 2
+            UserHistoryUnit.objects.create(user=request.user, input=f"Area of square with side length {side_length}", result=result)
+            return render(request, 'square_area.html', {'result': result})
+
+    return render(request, 'square_area.html')
