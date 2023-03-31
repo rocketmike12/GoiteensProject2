@@ -9,7 +9,7 @@
 <body class="text">
 <main class="form-signin w-100 m-auto">
   <form method="POST">{% csrf_token %}
-    <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+      <br><br><br>
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <div class="form-floating">
@@ -23,12 +23,10 @@
 
     <div class="checkbox mb-3">
       <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-      <a href="{{ SITE_URL }}/authentication/registration">
-    <p class="mt-5 mb-3 text-muted">© 2023</p>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button><br><br>
+      <h6>Don't have an account? <a class="" href="{{ SITE_URL }}/authentication/registration">Register</a></h6>
+    <p class="mt-5 mb-3 text-muted">© 2022-2023</p>
   </form>
 </main>
 </body>
