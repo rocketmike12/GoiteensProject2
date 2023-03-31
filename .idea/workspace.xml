@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebe246bf-14cd-4f81-a2ff-ae28c3963e09" name="Changes" comment="Finished working history, finished basic calculator">
-      <change afterPath="$PROJECT_DIR$/backend/admin/templates/circle_area.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/admin/templates/square_area.html" afterDir="false" />
+    <list default="true" id="ebe246bf-14cd-4f81-a2ff-ae28c3963e09" name="Changes" comment="Fixed basic calculator, fixed history, added square area calculator and circle area calculator, fixed a bug in index.">
+      <change afterPath="$PROJECT_DIR$/backend/admin/templates/triangle_area.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/admin/templates/trigonometry.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/admin/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/admin/templates/basic_calculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/basic_calculator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/admin/templates/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/history.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/admin/templates/circle_area.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/circle_area.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/admin/templates/square_area.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/square_area.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/products_module/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/products_module/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/products_module/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/products_module/views.py" afterDir="false" />
@@ -38,20 +40,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/Python/PycharmProjects/GoiteensProject2/backend/admin/templates&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Projects/Python/PycharmProjects/GoiteensProject2/backend/admin/templates",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\Python\PycharmProjects\GoiteensProject2\backend\admin\templates" />
@@ -170,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679902088860</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fixed basic calculator, fixed history, added square area calculator and circle area calculator, fixed a bug in index.">
+      <created>1680102478048</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680102478048</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +205,7 @@
     <MESSAGE value="Upgraded basic calculator, added history (not working yet)" />
     <MESSAGE value="Made all links work" />
     <MESSAGE value="Finished working history, finished basic calculator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished working history, finished basic calculator" />
+    <MESSAGE value="Fixed basic calculator, fixed history, added square area calculator and circle area calculator, fixed a bug in index." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed basic calculator, fixed history, added square area calculator and circle area calculator, fixed a bug in index." />
   </component>
 </project>

@@ -9,8 +9,16 @@
             <form method="POST">
                 {% csrf_token %}
                 <div class="form-group">
-                  <label for="radius">Radius (cm)</label>
-                  <input type="number" step="any" class="form-control" name="radius">
+                  <label for="a">Side A (cm)</label>
+                  <input type="number" step="any" class="form-control" name="a">
+                </div>
+                <div class="form-group">
+                  <label for="b">Side B (cm)</label>
+                  <input type="number" step="any" class="form-control" name="b">
+                </div>
+                <div class="form-group">
+                  <label for="c">Side C (cm)</label>
+                  <input type="number" step="any" class="form-control" name="c">
                 </div>
 
                 <br>

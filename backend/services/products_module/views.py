@@ -4,6 +4,7 @@ from services.products_module.models import Product, UserHistoryUnit
 from django.core.paginator import Paginator
 from rest_framework import status
 from django.contrib.auth.decorators import login_required
+from math import sqrt, sin, cos, tan
 
 from django.template.defaulttags import register
 
@@ -63,6 +64,7 @@ def basic_calculator(request):
             result = float(num1) * float(num2)
             UserHistoryUnit.objects.create(user=request.user, input=f"{num1} * {num2}", result=result)
             return render(request, 'basic_calculator.html', {'result': result})
+
     return render(request, 'basic_calculator.html')
 
 
@@ -86,3 +88,44 @@ def square_area(request):
             return render(request, 'square_area.html', {'result': result})
 
     return render(request, 'square_area.html')
+
+
+def triangle_area(request):
+    if request.method == 'POST':
+        a = request.POST['a']
+        b = request.POST['b']
+        c = request.POST['c']
+        if 'calculate' in request.POST:
+            a = float(a)
+            b = float(b)
+            c = float(c)
+            s = (a + b + c) / 2
+            result = sqrt(s * (s - a) * (s - b) * (s - c))
+            UserHistoryUnit.objects.create(user=request.user, input=f"Area of triangle with:\n"
+                                                                    f"Side A: {a} cm;\n"
+                                                                    f"Side B: {b} cm;\n"
+                                                                    f"Side C: {c} cm", result=result)
+            return render(request, 'triangle_area.html', {'result': result})
+
+    return render(request, 'triangle_area.html')
+
+
+def trigonometry(request):
+    if request.method == 'POST':
+        number = request.POST['number']
+        if 'sin' in request.POST:
+            result = sin(float(number))
+            UserHistoryUnit.objects.create(user=request.user, input=f"sin {number}", result=result)
+            return render(request, 'trigonometry.html', {'result': result})
+
+        if 'cos' in request.POST:
+            result = cos(float(number))
+            UserHistoryUnit.objects.create(user=request.user, input=f"cos {number}", result=result)
+            return render(request, 'trigonometry.html', {'result': result})
+
+        if 'tan' in request.POST:
+            result = tan(float(number))
+            UserHistoryUnit.objects.create(user=request.user, input=f"tan {number}", result=result)
+            return render(request, 'trigonometry.html', {'result': result})
+
+    return render(request, 'trigonometry.html')
