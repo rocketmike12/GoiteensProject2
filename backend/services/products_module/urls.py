@@ -1,5 +1,5 @@
 from django.urls import path, include
-from services.products_module.views import index, basic_calculator, get_my_history, circle_area, square_area, triangle_area, trigonometry
+from services.products_module.views import index, basic_calculator, get_my_history, circle_area, square_area, triangle_area, trigonometry, premium
 
 urlpatterns = [
     path('', index, name='index'),
@@ -9,4 +9,5 @@ urlpatterns = [
     path('triangle_area', triangle_area, name='triangle_area'),
     path('trigonometry', trigonometry, name='trigonometry'),
     path('history', get_my_history, name='history'),
+    path('premium', premium, name='premium'),
 ]

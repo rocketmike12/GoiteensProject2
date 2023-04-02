@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-3">
+  <main>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col" style="height: 400px;">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">1 Month</h4>
+          </div>
+          <div class="card-body" style="height: 400px; padding-top: 100px">
+            <h1 class="card-title pricing-card-title">$1</h1>
+              <p>1 month usage of premium calculator</p>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary" name="1_month">Sign up</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">1 Year</h4>
+          </div>
+          <div class="card-body" style="height: 400px; padding-top: 100px">
+            <h1 class="card-title pricing-card-title">$3</h1>
+              <p>1 year usage of premium calculator</p>
+            <button type="button" class="w-100 btn btn-lg btn-primary" name="1_year">Get started</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Forever</h4>
+          </div>
+          <div class="card-body" style="height: 400px; padding-top: 100px">
+            <h1 class="card-title pricing-card-title">$10</h1>
+                <p>Forever usage of premium calculator</p>
+            <button type="button" class="w-100 btn btn-lg btn-warning shadow" name="forever">Contact us</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

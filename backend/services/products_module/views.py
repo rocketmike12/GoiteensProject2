@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from services.products_module.models import Product, UserHistoryUnit
+from services.user_module.models import UserSettings
 from django.core.paginator import Paginator
 from rest_framework import status
 from django.contrib.auth.decorators import login_required
@@ -129,3 +130,15 @@ def trigonometry(request):
             return render(request, 'trigonometry.html', {'result': result})
 
     return render(request, 'trigonometry.html')
+
+
+def premium(request):
+    if request.method == 'POST':
+        user = request.user
+        if 'buy' in request.POST:
+            user.is_premium = True
+            user.save()
+            return redirect(request, 'index.html')
+
+    return render(request, 'premium.html')
+
