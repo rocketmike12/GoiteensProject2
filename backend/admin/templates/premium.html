@@ -4,6 +4,7 @@
 
 <div class="container py-3">
   <main>
+   <form method="POST">{% csrf_token %}
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
       <div class="col" style="height: 400px;">
         <div class="card mb-4 rounded-3 shadow-sm">
@@ -37,11 +38,12 @@
           <div class="card-body" style="height: 400px; padding-top: 100px">
             <h1 class="card-title pricing-card-title">$10</h1>
                 <p>Forever usage of premium calculator</p>
-            <button type="button" class="w-100 btn btn-lg btn-warning shadow" name="forever">Contact us</button>
+            <button type="submit" name="forever" class="w-100 btn btn-lg btn-warning shadow">Contact us</button>
           </div>
         </div>
       </div>
     </div>
+       </form>
   </main>
 </div>
 

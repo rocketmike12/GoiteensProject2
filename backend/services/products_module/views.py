@@ -6,6 +6,7 @@ from django.core.paginator import Paginator
 from rest_framework import status
 from django.contrib.auth.decorators import login_required
 from math import sqrt, sin, cos, tan
+import datetime
 
 from django.template.defaulttags import register
 
@@ -112,33 +113,37 @@ def triangle_area(request):
 
 
 def trigonometry(request):
-    if request.method == 'POST':
-        number = request.POST['number']
-        if 'sin' in request.POST:
-            result = sin(float(number))
-            UserHistoryUnit.objects.create(user=request.user, input=f"sin {number}", result=result)
-            return render(request, 'trigonometry.html', {'result': result})
+    if request.user.is_premium:
+        if request.method == 'POST':
+            number = request.POST['number']
+            if 'sin' in request.POST:
+                result = sin(float(number))
+                UserHistoryUnit.objects.create(user=request.user, input=f"sin {number}", result=result)
+                return render(request, 'trigonometry.html', {'result': result})
 
-        if 'cos' in request.POST:
-            result = cos(float(number))
-            UserHistoryUnit.objects.create(user=request.user, input=f"cos {number}", result=result)
-            return render(request, 'trigonometry.html', {'result': result})
+            if 'cos' in request.POST:
+                result = cos(float(number))
+                UserHistoryUnit.objects.create(user=request.user, input=f"cos {number}", result=result)
+                return render(request, 'trigonometry.html', {'result': result})
 
-        if 'tan' in request.POST:
-            result = tan(float(number))
-            UserHistoryUnit.objects.create(user=request.user, input=f"tan {number}", result=result)
-            return render(request, 'trigonometry.html', {'result': result})
+            if 'tan' in request.POST:
+                result = tan(float(number))
+                UserHistoryUnit.objects.create(user=request.user, input=f"tan {number}", result=result)
+                return render(request, 'trigonometry.html', {'result': result})
 
-    return render(request, 'trigonometry.html')
+        return render(request, 'trigonometry.html')
+
+    else:
+        return redirect('premium')
 
 
 def premium(request):
     if request.method == 'POST':
         user = request.user
-        if 'buy' in request.POST:
+        if 'forever' in request.POST:
             user.is_premium = True
             user.save()
-            return redirect(request, 'index.html')
+            return redirect('index')
 
     return render(request, 'premium.html')
 

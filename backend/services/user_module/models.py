@@ -3,8 +3,6 @@ from django.db import models
 
 
 class User(AbstractUser):
-    is_premium = models.BooleanField(default=False, verbose_name='Premium')
-
     @property
     def full_name(self):
         return f'{self.first_name} {self.last_name}'
@@ -14,6 +12,8 @@ class User(AbstractUser):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         UserSettings.objects.get_or_create(user=self)
+
+    is_premium = models.BooleanField(default=False, verbose_name='Premium')
 
 
 class UserSettings(models.Model):
