@@ -4,13 +4,11 @@
 <div class="container">
   <main>
     <div>
-      <img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-      <h2>Checkout form</h2>
+      <h2 style="text-align: center;">Profile</h2>
     </div>
 
     <div class="row g-5 justify-content-md-center">
       <div class="col-md-6 col-sm-12">
-        <h4 class="mb-3">Billing address</h4>
 
         <form method="POST" class="needs-validation" novalidate="">{% csrf_token %}
           <div class="row g-3">
@@ -63,16 +61,6 @@
             </div>
 
           <hr class="my-4">
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="send_push">
-            <label class="form-check-label" for="send_push">Shipping address is the same as my billing address</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info">
-            <label class="form-check-label" for="save-info">Send Push</label>
-          </div>
 
           <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
          </div>

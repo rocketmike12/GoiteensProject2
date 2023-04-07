@@ -61,9 +61,6 @@ def profile(request):
     if not request.user.is_authenticated:
         return redirect('auth')
 
-    if not request.user.is_seller:
-        return HttpResponseNotFound
-
     if request.method == 'POST':
         form = ProfileForm(request.POST)
         if form.is_valid():
