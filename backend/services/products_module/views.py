@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from services.products_module.models import Product, UserHistoryUnit
-from services.user_module.models import UserSettings
+from services.user_module.models import User
 from django.core.paginator import Paginator
 from rest_framework import status
 from django.contrib.auth.decorators import login_required
@@ -27,7 +27,9 @@ def index(request):
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    context = {'products': page_obj, 'pages_count': paginator.num_pages, 'page_number': page_number}
+
+    file = request.user.files()
+    context = {'products': page_obj, 'pages_count': paginator.num_pages, 'page_number': page_number, 'file': file}
     return render(request, 'index.html', context)
 
 
@@ -93,46 +95,23 @@ def square_area(request):
 
 
 def triangle_area(request):
-    if request.method == 'POST':
-        a = request.POST['a']
-        b = request.POST['b']
-        c = request.POST['c']
-        if 'calculate' in request.POST:
-            a = float(a)
-            b = float(b)
-            c = float(c)
-            s = (a + b + c) / 2
-            result = sqrt(s * (s - a) * (s - b) * (s - c))
-            UserHistoryUnit.objects.create(user=request.user, input=f"Area of triangle with:\n"
-                                                                    f"Side A: {a} cm;\n"
-                                                                    f"Side B: {b} cm;\n"
-                                                                    f"Side C: {c} cm", result=result)
-            return render(request, 'triangle_area.html', {'result': result})
-
-    return render(request, 'triangle_area.html')
-
-
-def trigonometry(request):
     if request.user.is_premium:
         if request.method == 'POST':
-            number = request.POST['number']
-            if 'sin' in request.POST:
-                result = sin(float(number))
-                UserHistoryUnit.objects.create(user=request.user, input=f"sin {number}", result=result)
-                return render(request, 'trigonometry.html', {'result': result})
-
-            if 'cos' in request.POST:
-                result = cos(float(number))
-                UserHistoryUnit.objects.create(user=request.user, input=f"cos {number}", result=result)
-                return render(request, 'trigonometry.html', {'result': result})
-
-            if 'tan' in request.POST:
-                result = tan(float(number))
-                UserHistoryUnit.objects.create(user=request.user, input=f"tan {number}", result=result)
-                return render(request, 'trigonometry.html', {'result': result})
-
-        return render(request, 'trigonometry.html')
-
+            a = request.POST['a']
+            b = request.POST['b']
+            c = request.POST['c']
+            if 'calculate' in request.POST:
+                a = float(a)
+                b = float(b)
+                c = float(c)
+                s = (a + b + c) / 2
+                result = sqrt(s * (s - a) * (s - b) * (s - c))
+                UserHistoryUnit.objects.create(user=request.user, input=f"Area of triangle with:\n"
+                                                                        f"Side A: {a} cm;\n"
+                                                                        f"Side B: {b} cm;\n"
+                                                                        f"Side C: {c} cm", result=result)
+                return render(request, 'triangle_area.html', {'result': result})
+        return render(request, 'triangle_area.html')
     else:
         return redirect('premium')
 

@@ -14,6 +14,7 @@
         <form method="POST" class="needs-validation" novalidate="">{% csrf_token %}
           <div class="row g-3">
             <div class="col-sm-6">
+                <input type="file" name="file" id="id_file" accept=".png, .jpg">
               <label for="id_first_name" class="form-label">First name</label>
               <input type="text" class="form-control" name="first_name" id="id_first_name" placeholder="">
               <div class="invalid-feedback">

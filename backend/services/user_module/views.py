@@ -1,16 +1,12 @@
 from django.shortcuts import render, redirect
-
 from django.http import HttpResponseNotFound
-
 from django.contrib.auth import get_user_model
-
 from django.contrib.auth import authenticate, login
-
 from services.user_module.forms import RegistrationForm, AuthForm, ProfileForm
-
+from services.file_module.models import File
 from settings import SITE_URL
-
 from django.contrib.auth.hashers import make_password
+from django.contrib.contenttypes.models import ContentType
 
 User = get_user_model()
 
@@ -29,6 +25,12 @@ def registration(request):
             user.last_name = form.data['last_name']
 
             user.save()
+
+            file = request.FILES.get('file')
+
+            File.objects.create(file=file,
+                                content_type_id=ContentType.objects.get_for_model(User).id,
+                                object_id=user.pk)
 
             return redirect('index')
 

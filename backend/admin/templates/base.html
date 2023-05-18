@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +13,7 @@
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><img style="margin-right: 10px;" src="{% static file %}" alt="" width="50" height="50"></li>
           <li><a href="{{ SITE_URL }}/" class="nav-link px-2 text-white">Home</a></li>
           <li><a href="/history" class="nav-link px-2 text-white">History</a></li>
           <li><a href="/profile" class="nav-link px-2 text-white">Profile</a></li>

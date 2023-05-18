@@ -10,6 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
+
+from django.conf import settings
+from django.conf.urls.static import static
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
 
 from pathlib import Path
@@ -21,7 +25,12 @@ from settings.drf import *  # noqa: F405, F403, F401
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent  # backend
 LOGS_DIR = BASE_DIR / 'logs'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 MEDIA_ROOT = BASE_DIR / 'media'
 SITE_URL = 'http://localhost:8080'
 
@@ -53,7 +62,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'services.products_module',
-    'services.user_module'
+    'services.user_module',
+    'services.file_module'
 ]
 
 MIDDLEWARE = [

@@ -13,5 +13,6 @@ class Product(models.Model):
 
 class UserHistoryUnit(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Owner', related_name='history')
+    calculator = models.CharField(max_length=255, verbose_name='Calculator')
     input = models.CharField(max_length=255, verbose_name='Input')
     result = models.CharField(max_length=255, verbose_name='Result')
