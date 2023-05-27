@@ -27,10 +27,10 @@ def registration(request):
             user.save()
 
             file = request.FILES.get('file')
-
-            File.objects.create(file=file,
-                                content_type_id=ContentType.objects.get_for_model(User).id,
-                                object_id=user.pk)
+            if file:
+                File.objects.create(file=file,
+                                    content_type_id=ContentType.objects.get_for_model(User).id,
+                                    object_id=user.pk)
 
             return redirect('index')
 

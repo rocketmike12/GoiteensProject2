@@ -17,7 +17,10 @@ class User(AbstractUser):
         files = File.objects.filter(object_id=self.id,
                                     content_type_id=ContentType.objects.get_for_model(User).id)
         if files.exists():
-            return files[0].absolute_file_url
+            try:
+                return files[0].absolute_file_url
+            except ValueError:
+                pass
 
         return None
 

@@ -4,37 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebe246bf-14cd-4f81-a2ff-ae28c3963e09" name="Changes" comment="Updated html, fixed bugs">
-      <change afterPath="$PROJECT_DIR$/backend/services/file_module/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/services/file_module/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/services/file_module/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/services/file_module/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/services/file_module/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/services/products_module/filters.py" afterDir="false" />
+    <list default="true" id="ebe246bf-14cd-4f81-a2ff-ae28c3963e09" name="Changes" comment="Made filters and work with files (not working yet)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/admin/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/admin/templates/basic_calculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/basic_calculator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/admin/templates/circle_area.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/circle_area.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/admin/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/admin/templates/square_area.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/square_area.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/admin/templates/triangle_area.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/triangle_area.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/admin/templates/trigonometry.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/products_module/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/products_module/migrations/0002_currency_is_default.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/products_module/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/file_module/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/products_module/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/products_module/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/products_module/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/products_module/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/products_module/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/products_module/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/user_module/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user_module/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/user_module/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/user_module/migrations/0002_currency_usersettings_useraddress.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/user_module/migrations/0003_alter_usersettings_currency_alter_usersettings_user_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/user_module/migrations/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/user_module/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user_module/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/user_module/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user_module/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/settings/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/settings/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +42,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Projects/Python/PycharmProjects/GoiteensProject2/backend/services/products_module",
+    "last_opened_file_path": "D:/Projects/Python/PycharmProjects/GoiteensProject2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -234,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680885060482</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Made filters and work with files (not working yet)">
+      <created>1684423460516</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684423460516</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,6 +249,23 @@
     <MESSAGE value="added premium.html file, premium not working yet" />
     <MESSAGE value="Made premium work" />
     <MESSAGE value="Updated html, fixed bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated html, fixed bugs" />
+    <MESSAGE value="Made filters and work with files (not working yet)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made filters and work with files (not working yet)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backend/services/user_module/views.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backend/services/user_module/views.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
