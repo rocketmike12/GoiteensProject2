@@ -13,6 +13,7 @@ User = get_user_model()
 
 def registration(request):
     form = RegistrationForm()
+    file = request.user.files()
 
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -32,15 +33,16 @@ def registration(request):
                                     content_type_id=ContentType.objects.get_for_model(User).id,
                                     object_id=user.pk)
 
-            return redirect('index')
+            return redirect('auth')
 
     else:
         form = RegistrationForm()
 
-    return render(request, 'registration.html', context={'form': form})
+    return render(request, 'registration.html', context={'form': form, 'file': file})
 
 
 def auth(request):
+    file = request.user.files()
     if request.method == "POST":
         form = AuthForm(request.POST)
         user = authenticate(username=form.data['username'],
@@ -52,14 +54,16 @@ def auth(request):
         else:
             form = AuthForm()
 
-            return render(request, 'auth.html', context={'form': form, 'SITE_URL': SITE_URL})
+            return render(request, 'auth.html', context={'form': form, 'SITE_URL': SITE_URL, 'file': file})
     else:
         form = AuthForm()
 
-    return render(request, 'auth.html', context={'form': form, 'SITE_URL': SITE_URL})
+    return render(request, 'auth.html', context={'form': form, 'SITE_URL': SITE_URL, 'file': file})
 
 
 def profile(request):
+    file = request.user.files()
+
     if not request.user.is_authenticated:
         return redirect('auth')
 
@@ -84,7 +88,7 @@ def profile(request):
 
             return redirect('profile')
         else:
-            return render(request, 'registration.html', context={'form': form})
+            return render(request, 'registration.html', context={'form': form, 'file': file})
 
     else:
         form = ProfileForm(data={'first_name': request.user.first_name,
@@ -92,5 +96,5 @@ def profile(request):
                                  'username': request.user.username,
                                  'email': request.user.email})
 
-        return render(request, 'profile.html', context={'form': form})
+        return render(request, 'profile.html', context={'form': form, 'file': file})
 

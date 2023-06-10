@@ -40,61 +40,66 @@ def get_my_history(request):
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    context = {'history': page_obj, 'pages_count': paginator.num_pages, 'page_number': page_number}
+    file = request.user.files()
+    context = {'history': page_obj, 'pages_count': paginator.num_pages, 'page_number': page_number, 'file': file}
 
     return render(request, 'history.html', context)
 
 
 def basic_calculator(request):
+    file = request.user.files()
     if request.method == 'POST':
         num1 = request.POST['num1']
         num2 = request.POST['num2']
         if 'add' in request.POST:
             result = float(num1) + float(num2)
             UserHistoryUnit.objects.create(user=request.user, input=f"{num1} + {num2}", result=result)
-            return render(request, 'basic_calculator.html', {'result': result})
+            return render(request, 'basic_calculator.html', {'result': result, 'file': file})
 
         if 'sub' in request.POST:
             result = float(num1) - float(num2)
             UserHistoryUnit.objects.create(user=request.user, input=f"{num1} - {num2}", result=result)
-            return render(request, 'basic_calculator.html', {'result': result})
+            return render(request, 'basic_calculator.html', {'result': result, 'file': file})
 
         if 'div' in request.POST:
             result = float(num1) / float(num2)
             UserHistoryUnit.objects.create(user=request.user, input=f"{num1} / {num2}", result=result)
-            return render(request, 'basic_calculator.html', {'result': result})
+            return render(request, 'basic_calculator.html', {'result': result, 'file': file})
 
         if 'mul' in request.POST:
             result = float(num1) * float(num2)
             UserHistoryUnit.objects.create(user=request.user, input=f"{num1} * {num2}", result=result)
-            return render(request, 'basic_calculator.html', {'result': result})
+            return render(request, 'basic_calculator.html', {'result': result, 'file': file})
 
-    return render(request, 'basic_calculator.html')
+    return render(request, 'basic_calculator.html', {'file': file})
 
 
 def circle_area(request):
+    file = request.user.files()
     if request.method == 'POST':
         radius = request.POST['radius']
         if 'calculate' in request.POST:
-            result = (3.141 * float(radius)) ** 2
+            result = 3.141 * (float(radius) ** 2)
             UserHistoryUnit.objects.create(user=request.user, input=f"Area of circle with radius {radius}", result=result)
-            return render(request, 'circle_area.html', {'result': result})
+            return render(request, 'circle_area.html', {'result': result, 'file': file})
 
-    return render(request, 'circle_area.html')
+    return render(request, 'circle_area.html', {'file': file})
 
 
 def square_area(request):
+    file = request.user.files()
     if request.method == 'POST':
         side_length = request.POST['side_length']
         if 'calculate' in request.POST:
             result = float(side_length) ** 2
             UserHistoryUnit.objects.create(user=request.user, input=f"Area of square with side length {side_length}", result=result)
-            return render(request, 'square_area.html', {'result': result})
+            return render(request, 'square_area.html', {'result': result, 'file': file})
 
-    return render(request, 'square_area.html')
+    return render(request, 'square_area.html', {'file': file})
 
 
 def triangle_area(request):
+    file = request.user.files()
     if request.user.is_premium:
         if request.method == 'POST':
             a = request.POST['a']
@@ -110,13 +115,14 @@ def triangle_area(request):
                                                                         f"Side A: {a} cm;\n"
                                                                         f"Side B: {b} cm;\n"
                                                                         f"Side C: {c} cm", result=result)
-                return render(request, 'triangle_area.html', {'result': result})
-        return render(request, 'triangle_area.html')
+                return render(request, 'triangle_area.html', {'result': result, 'file': file})
+        return render(request, 'triangle_area.html', {'file': file})
     else:
         return redirect('premium')
 
 
 def premium(request):
+    file = request.user.files()
     if request.method == 'POST':
         user = request.user
         if 'forever' in request.POST:
@@ -124,5 +130,5 @@ def premium(request):
             user.save()
             return redirect('index')
 
-    return render(request, 'premium.html')
+    return render(request, 'premium.html', {'file': file})
 

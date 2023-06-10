@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebe246bf-14cd-4f81-a2ff-ae28c3963e09" name="Changes" comment="Made filters and work with files (not working yet)">
+    <list default="true" id="ebe246bf-14cd-4f81-a2ff-ae28c3963e09" name="Changes" comment="Made working user avatar system">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/admin/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/admin/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/admin/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin/templates/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/user_module/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user_module/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/products_module/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/products_module/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/user_module/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user_module/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,20 +35,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Projects/Python/PycharmProjects/GoiteensProject2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/Python/PycharmProjects/GoiteensProject2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\Python\PycharmProjects\GoiteensProject2\backend\services\products_module" />
@@ -217,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684423460516</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Made working user avatar system">
+      <created>1685178907824</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1685178907824</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,22 +256,7 @@
     <MESSAGE value="Made premium work" />
     <MESSAGE value="Updated html, fixed bugs" />
     <MESSAGE value="Made filters and work with files (not working yet)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made filters and work with files (not working yet)" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/backend/services/user_module/views.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/backend/services/user_module/views.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Made working user avatar system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made working user avatar system" />
   </component>
 </project>
